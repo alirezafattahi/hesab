@@ -7,3 +7,10 @@ class expense(models.Model):
     date = models.DateTimeField()
     amount = models.BigIntegerField()
     user = models.ForeignKey(User,on_delete=models.PROTECT)
+    def __str__ (self):
+        return self.text
+class income(models.Model):
+    text = models.CharField(max_length=255)
+    date = models.DateTimeField()
+    amount = models.BigIntegerField()
+    user = models.ForeignKey(User,on_delete=models.PROTECT)
